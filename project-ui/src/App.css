@@ -1,0 +1,157 @@
+html, body {
+  height: 100%;
+  background-color:#efefef;
+
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.nav-link {
+  padding: 8px 16px;
+  text-decoration: none!important;
+  color: inherit!important;
+}
+
+.nav-link:hover {
+  background-color: lightblue;
+}
+
+.header {
+  background-color: #2ba1ef;
+  font-size: 24px;
+  color: white;
+  padding: 16px 16px;
+  position: fixed;
+  width: 100%;
+  /* text-align: center; */
+  z-index: 9;
+  cursor: pointer;
+}
+
+.header:hover {
+  text-decoration: underline;
+}
+
+.non-header {
+  display: flex;
+  width: 100%;
+  top: 60px;
+  position: relative;
+  height: 100%;
+}
+
+.main-section {
+  width: 100%;
+  flex-grow: 1;
+  height: 100%;
+  padding: 8px 16px!important;
+}
+
+.MuiCard-root {
+  padding: 16px;
+}
+
+.MuiDivider-root {
+  margin-bottom: 12px!important;
+}
+
+.recipeCardDetail {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.viewModal {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewModal:focus-visible {
+  outline: none;
+}
+.modalCard {
+  width: 500px;
+  height: 800px;
+  overflow-y: scroll!important;
+}
+
+.viewModal .MuiDivider-root {
+  font-size: 32px;
+}
+
+.browseGrid .MuiDivider-root {
+  font-size: 24px;
+}
+
+.modalClose {
+  cursor: pointer;
+  margin-left: auto;
+  padding: 8px;
+}
+
+.modalClose:hover {
+  background-color: lightblue;
+  border-radius: 100%;
+}
+
+.modalControl {
+  display: flex;
+}
+
+.pageTitle {
+  margin-top: 0;
+  margin-bottom: 16px!important;
+}
+
+.titleSection {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.titleSection .postRecipe {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.MuiButton-root {
+  background-color: #2ba1ef!important;
+  padding: 6px 24px!important;
+}
+.center {
+  margin:auto!important;
+}
+
+.rightSide {
+  text-align: right;
+}

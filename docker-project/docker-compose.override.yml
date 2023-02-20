@@ -1,0 +1,35 @@
+version: "3.4"
+
+services:
+  project-ui:
+    # UNCOMMENT THIS BLOCK IF YOU BUILD AND INSTALL LOCALLY (DEV)
+    build: ../project-ui
+    command: npm run start:development
+    ports:
+      - 8001:8001
+      # - 35729:35729
+      # - 5228:5228
+      # - 5229:5229
+      # - 5230:5230
+    volumes:
+      - "../project-ui/src:/src/src"
+    # END COMMENT BLOCK
+    env_file:
+      - .env
+
+  project-api:
+    # UNCOMMENT THIS BLOCK IF YOU BUILD AND INSTALL LOCALLY (DEV)
+    build: ../project-api
+    ports:
+      - 3001:3001
+    volumes:
+      - "../project-api/:/src/"
+      - /usr/src/app/node_modules
+    entrypoint:
+      - npm
+      - run
+      - start
+    labels:
+      - DUMMY='maintains object or array status'
+
+

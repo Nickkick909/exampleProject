@@ -1,0 +1,39 @@
+version: '3.4'
+
+# Some environment variables will be utilized by several service definitions
+# This can be configured in the root directory's `.env` file 
+
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - 8083:3306
+    networks:
+      - web
+    volumes:
+      - ./test-sql-2:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: pwd
+      MYSQL_DATABASE: mysql
+
+  project-api:
+    image: example-project/project-api:master
+    networks:
+      - web
+    stdin_open: true
+    depends_on:
+      - mysql
+
+  project-ui:
+    image: example-project/project-ui:master
+    dns: 8.8.4.4
+    environment:
+      - PORT=8080
+    networks:
+      - web
+    stdin_open: true
+
+  
+networks:
+  web:
+    driver: bridge
