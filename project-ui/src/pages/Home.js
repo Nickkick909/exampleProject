@@ -66,6 +66,11 @@ function Home() {
         </div>
         {/* <Typography varient="subtitle"></Typography> */}
         <Grid container spacing={2} className="browseGrid">
+
+          {
+            recipes.length < 1 ? 
+            <>No recipies found. Submit your own.</>: ''
+          }
           {
             recipes && recipes.map( (recipe) => {
               return (
