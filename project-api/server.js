@@ -18,7 +18,10 @@ async function ConnectToDatabase() {
         //     host: "localhost"
         // });
         // console.lot("HERE")
-        // await connection.query(`CREATE DATABASE IF NOT EXISTS \`test_db\`;`);
+        const connection = await mysql.createConnection(config.database.url);
+            await connection.query(`CREATE DATABASE IF NOT EXISTS \`test_db\`;`);
+            console.log(`Database "${config.database}" ensured.`);
+
         // console.log("Created Database")
         await sequelize.authenticate();
         console.log('Successfully connected to the database');

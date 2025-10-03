@@ -28,7 +28,7 @@ services:
     image: example-project/project-ui:master
     dns: 8.8.4.4
     environment:
-      - PORT=8080
+      - PORT=8001
     networks:
       - web
     stdin_open: true

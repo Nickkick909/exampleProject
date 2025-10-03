@@ -21,7 +21,6 @@ exports.getAll = async (req, res) => {
         ]
     })
 
-    console.log("Recipies: ", recipies[1].dataValues.steps)
     res.status(200).send(recipies);
 };
 
